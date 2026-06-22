@@ -1,32 +1,25 @@
-# Antipromo Drop Monitor
+# Drop Monitors
 
-Watches [antipromo.com](https://antipromo.com) for new product drops and restocks.  
-Sends Discord alerts when something goes live.
+Automated drop monitors for Shopify stores. Sends Discord alerts when new products drop or sold-out items restock.
+
+## Stores Monitored
+
+| Store | Collection | Check Interval |
+|-------|-----------|----------------|
+| [Antipromo](https://antipromo.com) | All products | Every 5 min |
+| [Taiga Takahashi](https://taigatakahashi.com/en/collections/men) | Men's | Every 5 min |
 
 ## How it works
 - Runs every 5 minutes via GitHub Actions cron
-- Checks the Shopify `/products.json` endpoint
-- Detects new products and restocks (sold out → available)
-- Sends a Discord embed with product name, price, sizes, and thumbnail
-
-## Setup
-
-1. Create a **public** GitHub repo (free unlimited Actions minutes)
-2. Push this folder to it:
-   ```
-   cd C:\Users\christlew\antipromo-monitor
-   git init
-   git add .
-   git commit -m "antipromo monitor"
-   gh repo create antipromo-monitor --public --source . --push
-   ```
-3. That's it. The workflow runs every 5 minutes automatically.
-
-You can also trigger it manually from the Actions tab → "Run workflow".
+- Checks each store's Shopify `/products.json` endpoint
+- Detects **new products** and **restocks** (sold out → available)
+- Sends a Discord embed with product name, price, available sizes, and thumbnail
 
 ## Worst-case delay
 ~5 minutes after a drop goes live → Discord ping on your phone.
 
 ## Files
-- `check.py` — the monitor script (runs once per invocation)
-- `.github/workflows/monitor.yml` — GitHub Actions cron schedule
+- `check.py` — Antipromo monitor
+- `check_taiga.py` — Taiga Takahashi monitor
+- `.github/workflows/monitor.yml` — Antipromo cron schedule
+- `.github/workflows/monitor_taiga.yml` — Taiga Takahashi cron schedule
