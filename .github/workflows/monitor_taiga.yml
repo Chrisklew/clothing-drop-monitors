@@ -12,10 +12,11 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Restore state
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: state_taiga.json
-          key: taiga-state
+          key: taiga-state-${{ github.run_id }}
+          restore-keys: taiga-state-
 
       - name: Check for drops
         run: python check_taiga.py
@@ -24,4 +25,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: state_taiga.json
-          key: taiga-state
+          key: taiga-state-${{ github.run_id }}
