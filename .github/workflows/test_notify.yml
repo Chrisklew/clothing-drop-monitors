@@ -1,0 +1,15 @@
+name: Test Notifications
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Send test notifications
+        run: python test_notify.py
+        env:
+          ANTIPROMO_DISCORD_WEBHOOK: ${{ secrets.ANTIPROMO_DISCORD_WEBHOOK }}
+          TAIGA_DISCORD_WEBHOOK: ${{ secrets.TAIGA_DISCORD_WEBHOOK }}
