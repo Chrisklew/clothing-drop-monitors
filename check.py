@@ -12,7 +12,7 @@ from pathlib import Path
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 STORE_URL = "https://antipromo.com/products.json"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1518723005872603238/Yhm1P95Ic2zEb4DrNTNryzHechNRYSdQpUxSTG597wBIuAqCa615wmF8oKvYSNaTJA4Z"
+DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1528304434289971241/OCQ2z2VoxOUfC3qjyqj9sinW4t4pDPL9pEzwn_iyB0F9XLkNANVzL9fsnPFiFf4yGTRD"
 STATE_FILE = Path("state.json")
 
 

@@ -12,7 +12,7 @@ from pathlib import Path
 # ─── Configuration ───────────────────────────────────────────────────────────
 COLLECTION_URL = "https://taigatakahashi.com/en/collections/men/products.json?limit=250"
 PRODUCT_BASE_URL = "https://taigatakahashi.com/en/products"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1518730348970643528/4wg1uGiKlcTSt9E_K2YoTYzVLG0F63DCFr3BHVvFjSwF6ESMNPX6HYa0S6-mcTlkcFJr"
+DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1528304668466479124/oPt7YFUFEViPjqjp-sUXzA-OxlRk1EdOaPjzY6vzHBsrOSVEZWmJW9GerFy_UDmTzJrX"
 STATE_FILE = Path("state_taiga.json")
 
 
