@@ -95,7 +95,11 @@ def notify_restock(product: dict, restocked_variants: list[dict]):
 def main():
     state = load_state()
     known = state["known_products"]
-    products = fetch_products()
+    try:
+        products = fetch_products()
+    except Exception as e:
+        print(f"Failed to fetch products: {e}")
+        return
     first_run = not known
 
     for product in products:
