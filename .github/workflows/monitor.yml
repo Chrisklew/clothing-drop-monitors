@@ -20,6 +20,8 @@ jobs:
 
       - name: Check for drops
         run: python check.py
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.ANTIPROMO_DISCORD_WEBHOOK }}
 
       - name: Save state
         uses: actions/cache/save@v4

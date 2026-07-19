@@ -5,6 +5,7 @@ State is persisted via GitHub Actions cache.
 """
 
 import json
+import os
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -12,7 +13,7 @@ from pathlib import Path
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 STORE_URL = "https://antipromo.com/products.json"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1528304434289971241/OCQ2z2VoxOUfC3qjyqj9sinW4t4pDPL9pEzwn_iyB0F9XLkNANVzL9fsnPFiFf4yGTRD"
+DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 STATE_FILE = Path("state.json")
 
 

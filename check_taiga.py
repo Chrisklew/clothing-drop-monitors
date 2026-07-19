@@ -4,6 +4,7 @@ Runs once per invocation, checks for new drops/restocks in the men's collection.
 """
 
 import json
+import os
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -12,7 +13,7 @@ from pathlib import Path
 # ─── Configuration ───────────────────────────────────────────────────────────
 COLLECTION_URL = "https://taigatakahashi.com/en/collections/men/products.json?limit=250"
 PRODUCT_BASE_URL = "https://taigatakahashi.com/en/products"
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1528304668466479124/oPt7YFUFEViPjqjp-sUXzA-OxlRk1EdOaPjzY6vzHBsrOSVEZWmJW9GerFy_UDmTzJrX"
+DISCORD_WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 STATE_FILE = Path("state_taiga.json")
 
 

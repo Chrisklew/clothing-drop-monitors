@@ -20,6 +20,8 @@ jobs:
 
       - name: Check for drops
         run: python check_taiga.py
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.TAIGA_DISCORD_WEBHOOK }}
 
       - name: Save state
         uses: actions/cache/save@v4
