@@ -29,4 +29,4 @@ def send_test(webhook_env, store_name):
         print(f"{store_name}: HTTP {e.code} - {body}")
 
 send_test("ANTIPROMO_DISCORD_WEBHOOK", "Antipromo")
-send_test("TAIGA_DISCORD_WEBHOOK", "Taiga Takahashi")
+send_test("TAIGA_TAKAHASHI_DISCORD_WEBHOOK", "Taiga Takahashi")
