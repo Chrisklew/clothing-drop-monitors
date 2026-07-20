@@ -38,7 +38,7 @@ def send_discord(embed: dict):
     req = urllib.request.Request(
         DISCORD_WEBHOOK,
         data=payload,
-        headers={"Content-Type": "application/json"},
+        headers={"Content-Type": "application/json", "User-Agent": "DropMonitor/1.0"},
         method="POST",
     )
     try:

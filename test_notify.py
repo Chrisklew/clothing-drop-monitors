@@ -20,7 +20,7 @@ def send_test(webhook_env, store_name):
         "color": 0x5865F2,
     }
     payload = json.dumps({"embeds": [embed]}).encode()
-    req = urllib.request.Request(webhook, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+    req = urllib.request.Request(webhook, data=payload, headers={"Content-Type": "application/json", "User-Agent": "DropMonitor/1.0"}, method="POST")
     try:
         with urllib.request.urlopen(req, timeout=10):
             print(f"{store_name}: sent!")
