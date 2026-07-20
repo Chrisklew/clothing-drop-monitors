@@ -12,4 +12,4 @@ jobs:
         run: python test_notify.py
         env:
           ANTIPROMO_DISCORD_WEBHOOK: ${{ secrets.ANTIPROMO_DISCORD_WEBHOOK }}
-          TAIGA_DISCORD_WEBHOOK: ${{ secrets.TAIGA_DISCORD_WEBHOOK }}
+          TAIGA_TAKAHASHI_DISCORD_WEBHOOK: ${{ secrets.TAIGA_TAKAHASHI_DISCORD_WEBHOOK }}
